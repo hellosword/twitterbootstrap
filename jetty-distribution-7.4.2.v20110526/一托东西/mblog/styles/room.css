@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mainBox table{
+	width:500px;
+	margin:0px auto;
+}
+
+.mainBox table td{
+	width:160px;
+}
+
+.host{
+	color:#F00;
+	height:30px;
+	font-size: 14px;
+	line-height: 30px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+
+.host input{
+	font-size: 12px;
+	float: right;
+	margin-right: 20px;
+	margin-top: 7px;
+	padding: 0px 10px;
+	color: #234;
+	border: none;
+	background-image: linear-gradient(bottom, rgb(255,242,201) 100%, rgb(255,204,76) 0%, rgb(255,158,54) 59%);
+background-image: -o-linear-gradient(bottom, rgb(255,242,201) 100%, rgb(255,204,76) 0%, rgb(255,158,54) 59%);
+background-image: -moz-linear-gradient(bottom, rgb(255,242,201) 100%, rgb(255,204,76) 0%, rgb(255,158,54) 59%);
+background-image: -webkit-linear-gradient(bottom, rgb(255,242,201) 100%, rgb(255,204,76) 0%, rgb(255,158,54) 59%);
+background-image: -ms-linear-gradient(bottom, rgb(255,242,201) 100%, rgb(255,204,76) 0%, rgb(255,158,54) 59%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(1, rgb(255,242,201)),
+	color-stop(0, rgb(255,204,76)),
+	color-stop(0.59, rgb(255,158,54))
+);
+	border-radius: 15px;
+	text-align: center;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 1px 1px 3px #333;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	box-shadow: 1px 1px 3px #333;
+}
+
+.roomInfor{
+	font:italic bold 26px "微软雅黑";
+	color:#C6F;
+	line-height: 50px;
+	padding-left: 30px;
+}
+.myOperations .ready{
+	margin-top:30px;
+}
+
+.playerName{
+	margin-left: 20px;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+table td.playersTd img.avatar{
+	width: 48px;
+	height: 48px;
+	margin-left: 20px;
+}
+
+table td.playersTd{
+	padding-bottom: 15px;
+	margin: 10px;
+	width: 300px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 1px 1px 3px #333;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	box-shadow: 1px 1px 3px #333;
+}
+
+table#rooms td{
+	padding-bottom: 15px;
+	margin: 10px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 1px 1px 3px #333;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	box-shadow: 1px 1px 3px #333;
+}
+
+table#rooms td td{
+	padding-bottom: 0px;
+	margin: 2px;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	border-radius: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.room{
+	width: 300px;
+}

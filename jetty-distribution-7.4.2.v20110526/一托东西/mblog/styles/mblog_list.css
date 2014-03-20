@@ -1,0 +1,214 @@
+@CHARSET "UTF-8";
+
+#mblog_list {
+	background: url(../images/img/mblog_list_bg.png);
+}
+
+#new_things {
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-right: 30px;
+	padding-bottom: 100px;
+}
+
+.new_item {
+	margin-bottom: 20px;
+}
+
+.sayer {
+	margin-left: 10px;
+	margin-right: -67px;
+	float: left;
+}
+
+.sayer img {
+	vertical-align: middle;
+}
+
+.sayer .avatar_img {
+	height: 68px;
+	width: 68px;
+	-webkit-border-radius: 38px;
+	-moz-border-radius: 38px;
+	border-radius: 38px;
+	left: -75px;
+	top: -1px;
+	position: relative;
+}
+
+.sayer .avatar_border {
+	height: 82px;
+	width: 82px;
+}
+
+.saying {
+	margin-left: 90px;
+}
+
+.saying_left {
+	width: 15px;
+	height: 40px;
+	background-image: url(../images/img/pre_saying_left.png);
+	float: left;
+	margin-top: 15px;
+}
+
+.saying_box {
+	margin-left: 18px;
+	padding: 15px 20px 36px 20px;
+	background: #FFF;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 3px #999;
+	-webkit-box-shadow: 1px 1px 3px #999;
+	box-shadow: 1px 1px 3px #999;
+}
+
+.saying_box p {
+	font-family: "微软雅黑", "黑体", "宋体", "幼圆";
+	font-size: 14px;
+	color: #333;
+	line-height: 20px;
+}
+
+.saying_box p span {
+	color: #09F;
+}
+
+.saying_func {
+	margin-top: 15px;
+	margin-right: -8px;
+	margin-left: -5px;
+}
+
+.saying_info {
+	float: left;
+}
+
+.saying_info span {
+	font-family: "微软雅黑", "黑体", "宋体", "幼圆";
+	font-size: 12px;
+	color: #999;
+	margin: 0px 3px;
+}
+
+.saying_info span a {
+	font-family: "微软雅黑", "黑体", "宋体", "幼圆";
+	font-size: 12px;
+	color: #999;
+	text-decoration: none;
+}
+
+.saying_info span a:hover {
+	color: #333;
+}
+
+.saying_operation a {
+	font-family: "微软雅黑", "黑体", "宋体", "幼圆";
+	font-size: 12px;
+	color: #999;
+	text-decoration: none;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.saying_operation a+a {
+	border-left: #999 solid 1px;
+}
+
+.saying_operation a:hover {
+	color: #333;
+}
+
+.saying_operation {
+	float: right;
+}
+
+.comment_box {
+	min-height: 100px;
+	margin-left: 23px;
+	background: rgba(200, 200, 200, 0.3);
+	-webkit-border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	-moz-box-shadow: 1px 1px 2px #aaa;
+	-webkit-box-shadow: 1px 1px 2px #aaa;
+	box-shadow: 1px 1px 2px #aaa;
+	padding: 10px 20px 35px 20px;
+	margin-right: 5px;
+}
+
+.comment_box p {
+	font-family: "微软雅黑", "黑体", "宋体", "幼圆";
+	font-size: 12px;
+	color: #333;
+	line-height: 20px;
+	border-bottom: #999 dotted 1px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.comment_area {
+	height: 40px;
+	display: block;
+	background: rgba(255, 255, 255, 0.5);
+	background-position: 0px -50px;
+	border: none;
+	color: #8F8F8F;
+	font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica,
+		STHeiti;
+	font-size: 14px;
+	line-height: 28px;
+	padding: 5px 20px 5px 10px;
+	margin-left: -4px;
+	margin-right: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 2px #ccc;
+	-webkit-box-shadow: 1px 1px 2px #ccc;
+	box-shadow: 1px 1px 2px #ccc;
+}
+
+.comment_area:focus {
+	background: #FFF;
+}
+
+.reply {
+	width: 115px;
+	height: 55px;
+	border: none;
+	background-color: transparent;
+	background-image: url(../images/img/reply_button.png);
+	background-position: 0px 0px;
+	float: right;
+	margin-top: -8px;
+}
+
+.reply:hover {
+	background-position: 0px -55px;
+}
+
+.reply:active {
+	background-position: 0px -110px;
+}
+
+.fold {
+	font-family: "微软雅黑", "黑体", "宋体", "幼圆";
+	font-size: 12px;
+	color: #666;
+	text-decoration: none;
+	float: right;
+	clear: right;
+	line-height: 30px;
+}
+
+.fold:hover {
+	color: #333
+}
+
+.pic {
+	margin: 10px auto;
+}

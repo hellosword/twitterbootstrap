@@ -1,0 +1,193 @@
+@CHARSET "UTF-8";
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑", "黑体", "宋体";
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+html,body {
+	height: 100%;
+}
+
+body {
+	background-color: #004465;
+	background-image: url("../images/img/bg-repeat.jpg");
+	background-repeat: repeat;
+	height: 100%;
+}
+
+#wrapper {
+	background: url("../images/img/bg.jpg") no-repeat center -30px
+		transparent;
+	height: 100%;
+}
+
+#logo {
+	position: absolute;
+	text-align: center;
+	top: 30px;
+	left: -5px;
+	width: 100%;
+}
+
+.container {
+	position: relative;
+	margin: auto;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+.title {
+	color: white;
+	font-size: 25px;
+	height: 80px;
+	padding-left: 50px;
+	line-height: 80px;
+}
+
+#login_wrapper {
+	top: 300px;
+	width: 400px;
+	height: 250px;
+}
+
+#register_wrapper{
+	top: 150px;
+	width: 400px;
+	height: 415px;
+}
+
+div.input_div {
+	position: relative;
+	margin: auto;
+	margin-bottom: 15px;
+	/*border: 1px solid #ccc;*/
+	width: 300px;
+	height: 40px;
+	/*background-color: #FFF;*/
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background-image: linear-gradient(bottom, rgb(255, 255, 255) 0%,
+		rgb(222, 222, 222) 100%, rgb(255, 255, 255) 46%);
+	background-image: -o-linear-gradient(bottom, rgb(255, 255, 255) 0%,
+		rgb(222, 222, 222) 100%, rgb(255, 255, 255) 46%);
+	background-image: -moz-linear-gradient(bottom, rgb(255, 255, 255) 0%,
+		rgb(222, 222, 222) 100%, rgb(255, 255, 255) 46%);
+	background-image: -webkit-linear-gradient(bottom, rgb(255, 255, 255) 0%,
+		rgb(222, 222, 222) 100%, rgb(255, 255, 255) 46%);
+	background-image: -ms-linear-gradient(bottom, rgb(255, 255, 255) 0%,
+		rgb(222, 222, 222) 100%, rgb(255, 255, 255) 46%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(255,
+		255, 255)), color-stop(1, rgb(222, 222, 222)),
+		color-stop(0.46, rgb(255, 255, 255)));
+}
+
+.gender_div{
+	float: left;
+	line-height: 36px;
+	color: white;
+	margin-left: 30px;
+}
+
+.gender_div input{
+	margin-left: 30px;
+}
+
+.button {
+	cursor:pointer;
+	float: right;
+	margin-right: 50px;
+	display: block;
+	height: 35px;
+	width: 70px;
+	border: 1px solid #246;
+	color: #EEE;
+	font-size: 14px;
+	/*text-shadow: rgba(0,0,0,0.5) 0px 0, rgba(0,0,0,0.3) 0 0px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;*/
+	background:none;
+	line-height: 35px;
+	text-align: center;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 0px 0px 8px #222; 
+	-webkit-box-shadow : 0px 0px 8px #222; 
+	box-shadow : 0px 0px 8px #222;
+	background-image: linear-gradient(bottom, rgb(105, 167, 214) 100%,
+		rgb(25, 83, 133) 56%, rgb(3, 58, 105) 0%);
+	background-image: -o-linear-gradient(bottom, rgb(105, 167, 214) 100%,
+		rgb(25, 83, 133) 56%, rgb(3, 58, 105) 0%);
+	background-image: -moz-linear-gradient(bottom, rgb(105, 167, 214) 100%,
+		rgb(25, 83, 133) 56%, rgb(3, 58, 105) 0%);
+	background-image: -webkit-linear-gradient(bottom, rgb(105, 167, 214)
+		100%, rgb(25, 83, 133) 56%, rgb(3, 58, 105) 0%);
+	background-image: -ms-linear-gradient(bottom, rgb(105, 167, 214) 100%,
+		rgb(25, 83, 133) 56%, rgb(3, 58, 105) 0%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgb(105,
+		167, 214)), color-stop(0.56, rgb(25, 83, 133)),
+		color-stop(0, rgb(3, 58, 105)));
+}
+
+label.icon {
+	display: inline-block;
+	width: 50px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 33px;
+}
+
+label.icon img {
+	vertical-align: middle;
+}
+
+input.input {
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	padding-left: 20px;
+	border: 0px;
+	outline: none 0;
+	background: none;
+}
+
+#footer{
+	background: #134;
+	position: absolute;
+	height: 80px;
+	bottom: 0px;
+	width: 100%;
+	-moz-box-shadow: 0px -1px 3px #000; 
+	-webkit-box-shadow : 0px -1px 3px #000; 
+	box-shadow : 0px -1px 3px #000;
+}
+
+#foot_sep1{
+	height: 4px;
+	width: 100%;
+	border-bottom: 1px dashed #39C;
+}
+
+#foot_sep2{
+	height: 1px;
+	width: 100%;
+	border-top: 1px dashed #369;
+}
+
+#btns{
+	margin:auto;
+	margin-top: 15px;
+	width: 300px;
+}

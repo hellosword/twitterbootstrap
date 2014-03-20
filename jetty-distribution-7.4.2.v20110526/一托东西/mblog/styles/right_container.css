@@ -1,0 +1,147 @@
+@CHARSET "UTF-8";
+
+#right_container {
+	background-image: linear-gradient(left, rgb(33, 77, 110) 0%,
+		rgb(12, 34, 66) 100% );
+	background-image: -o-linear-gradient(left, rgb(33, 77, 110) 0%,
+		rgb(12, 34, 66) 100% );
+	background-image: -moz-linear-gradient(left, rgb(33, 77, 110) 0%,
+		rgb(12, 34, 66) 100% );
+	background-image: -webkit-linear-gradient(left, rgb(33, 77, 110) 0%,
+		rgb(12, 34, 66) 100% );
+	background-image: -ms-linear-gradient(left, rgb(33, 77, 110) 0%,
+		rgb(12, 34, 66) 100% );
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgb(33, 77,
+		110) ), color-stop(1, rgb(12, 34, 66) ) );
+}
+
+#right_tools {
+	width: 50px;
+	height: 100%;
+	border-right: 1px solid #234;
+	float: left;
+}
+
+#right_tools a {
+	display: block;
+	padding: 20px 10px 0px 10px;
+	width: 30px;
+}
+
+#right_tools a:hover {
+	display: block;
+	padding: 18px 10px 2px 10px;
+	width: 30px;
+}
+
+#right_tools a img {
+	width: 30px;
+}
+
+#right_func {
+	float: right;
+	height: 100%;
+}
+
+#search_nick_input {
+	width: 180px;
+	height: 22px;
+	display: block;
+	background: rgba(255, 255, 255, 0.5);
+	background-position: 0px -70px;
+	border: none;
+	color: #FFF;
+	font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica,
+		STHeiti;
+	font-size: 14px;
+	line-height: 20px;
+	position: relative;
+	left: 10px;
+	top: 20px;
+	padding: 5px 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 3px #999;
+	-webkit-box-shadow: 1px 1px 3px #999;
+	box-shadow: 1px 1px 3px #999;
+}
+
+#right_container #search_list {
+	position: relative;
+	top: 40px;
+	left: 15px;
+	width: 190px;
+}
+
+#right_container #search_list .user {
+	height: 50px;
+}
+
+#right_container #search_list .user .user_info {
+	display: inline-block;
+	width: 135px;
+}
+
+#right_container #search_list .user .user_info img {
+	vertical-align: middle;
+}
+
+#right_container #search_list .user .user_info .avatar_img {
+	height: 30px;
+	width: 30px;
+	-webkit-border-radius: 38px;
+	-moz-border-radius: 38px;
+	border-radius: 38px;
+	left: -34px;
+	position: relative;
+	margin-right: -20px;
+}
+
+#right_container #search_list .user .user_info .avatar_border {
+	height: 38px;
+	width: 38px;
+}
+#right_container #search_list .user a {
+	color: #DDD;
+	font-size: 12px;
+}
+
+#right_container #search_list .user .op {
+	color: #FFF;
+	float: right;
+	line-height: 36px;
+	
+}
+
+#map{
+	height: 100%;
+}
+
+
+div.content {
+	margin: auto;
+}
+
+div.missing {
+	margin: auto;
+	position: relative;
+	top: 50%;
+	width: 193px;
+}
+
+div.missing a {
+	height: 63px;
+	position: relative;
+	top: -31px;
+}
+
+div.missing img {
+	border-width: 0px;
+}
+
+div#unityPlayer {
+	cursor: default;
+	height: 450px;
+	width: 600px;
+}

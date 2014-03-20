@@ -1,0 +1,132 @@
+@CHARSET "UTF-8";
+#mblog_list{
+	-moz-box-shadow: -2px 0px 3px rgba(0, 0, 0, 0.6); 
+	-webkit-box-shadow : -2px 0px 3px rgba(0, 0, 0, 0.6); 
+	box-shadow : -2px 0px 3px rgba(0, 0, 0, 0.6);
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#footer{
+	background: #134;
+	position: absolute;
+	height: 80px;
+	bottom: 0px;
+	-moz-box-shadow: 0px -1px 8px #000; 
+	-webkit-box-shadow : 0px -1px 8px #000; 
+	box-shadow : 0px -1px 8px #000;
+}
+
+#foot_sep1{
+	height: 4px;
+	width: 100%;
+	border-bottom: 1px dashed #39C;
+}
+
+#foot_sep2{
+	height: 1px;
+	width: 100%;
+	border-top: 1px dashed #369;
+}
+
+
+#say_box {
+	margin: 10px;
+	margin-top: 15px;
+}
+
+#say_box p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 30px;
+	color: #333;
+	padding-left: 15px;
+	margin-bottom: 5px;
+	padding-top: 3px;
+}
+
+#say_area {
+	height: 30px;
+	display: block;
+	background: #FFF;
+	background-position: 0px -70px;
+	border: none;
+	color: #8F8F8F;
+	font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica,
+		STHeiti;
+	font-size: 14px;
+	line-height: 28px;
+	margin-left: 16px;
+	margin-bottom: 3px;
+	padding: 5px 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 3px #999;
+	-webkit-box-shadow: 1px 1px 3px #999;
+	box-shadow: 1px 1px 3px #999;
+}
+
+#say_area:focus {
+	background-position: 0px 0px;
+}
+
+div.tools {
+	float: left;
+	margin-left: 5px;
+	margin-top: 2px;
+	width: 380px;
+}
+
+li.tools {
+	list-style-image: none;
+	display: inline-block;
+	font-family: "微软雅黑", "黑体", "宋体", "幼圆";
+	font-size: 14px;
+	margin: 5px 10px;
+}
+
+.tools img {
+	text-align: center;
+	vertical-align: middle;
+	border: none;
+}
+
+.tools a {
+	color: #CCC;
+	text-decoration: none;
+}
+
+.tools a:hover {
+	color: #FFF;
+}
+
+#say_it {
+	width: 115px;
+	height: 55px;
+	border: none;
+	background-color: transparent;
+	background-image: url(../images/img/say_it_button.png);
+	background-position: 0px 0px;
+	float: right;
+	margin-right: 10px;
+	margin-top: -8px;
+}
+
+#say_it:hover {
+	background-position: 0px -55px;
+}
+
+#say_it:active {
+	background-position: 0px -110px;
+}
+
+#count {
+	float: right;
+	font-family: "微软雅黑", "黑体", "宋体", "幼圆";
+	font-size: 14px;
+	color: #FFF;
+	margin-top: 15px;
+	margin-right: 15px;
+}

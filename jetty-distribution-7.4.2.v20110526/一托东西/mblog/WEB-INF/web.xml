@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/classes/applicationContext.xml</param-value>
+    </context-param>
+    
+   <listener>
+         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    
+  <filter>
+  <filter-name>Encodingfilter</filter-name>
+  <filter-class>mblog.filter.EncodingFilter</filter-class>
+  </filter>
+   <filter>
+  <filter-name>CheckLoginForUser</filter-name>
+  <filter-class>mblog.filter.CheckLoginForUser</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>struts2</filter-name>
+  	<filter-class>
+  		mblog.filter.MyStrutsDispatcher
+  	</filter-class>
+  </filter>
+  
+  
+  <filter-mapping>
+  <filter-name>Encodingfilter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  <filter-name>CheckLoginForUser</filter-name>
+  <url-pattern>/mblog-index.jsp</url-pattern>
+  <url-pattern>/servlet/App</url-pattern>
+  <url-pattern>/App/*</url-pattern>
+  <url-pattern>/m/*</url-pattern>
+  <url-pattern>/c/*</url-pattern>
+  <url-pattern>/l/*</url-pattern>
+  <url-pattern>/s/*</url-pattern>
+  <url-pattern>/t/*</url-pattern>
+  <url-pattern>/i/*</url-pattern>
+  <url-pattern>/signin/*</url-pattern>
+  <url-pattern>/json/*</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>struts2</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  
+ 
+  
+  
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>App</servlet-name>
+    <servlet-class>mblog.app.PaintAndGuess</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>App</servlet-name>
+    <url-pattern>/servlet/App</url-pattern>
+  </servlet-mapping>
+  
+
+ </web-app>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="welcome" namespace="/" extends="struts-default">
+		<action name="login" class="loginAction">
+			<result name="success" type="redirect">
+				<param name="location">/mblog-index.jsp</param>
+				<param name="parse">false</param>
+			</result>
+			<result name="error" type="redirect">
+				<param name="location">/index.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="logout" class="logoutAction">
+			<result name="success" type="redirect">
+				<param name="location">/index.jsp</param>
+				<param name="parse">false</param>
+			</result>
+			<result name="error" type="redirect">
+				<param name="location">/index.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="reg" class="registerAction">
+			<result name="success" type="redirect">
+				<param name="location">/mblog-index.jsp</param>
+				<param name="parse">false</param>
+			</result>
+			<result name="error" type="redirect">
+				<param name="location">/index.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="recFriends" class="viewRecFriendsAction">
+			<result name="success">
+				<param name="location">/search_userlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+			<result name="error">
+				<param name="location">/XX.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="viewUser" class="viewPersonnalSpaceAction">
+			<result name="success">
+				<param name="location">/friendspace.jsp</param>
+				<param name="parse">false</param>
+			</result>
+			<result name="error">
+				<param name="location">/XX.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+
+	</package>
+
+	<package name="json" namespace="/json" extends="json-default">
+		<action name="viewFriendsMap" class="viewFriendsMapAction">
+			<result name="success" type="json">
+				<param name="root">addresses</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="signin" namespace="/signin" extends="struts-default">
+		<action name="signin" class="signInAction">
+			<result name="success">
+				<param name="location">/ok.html</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="mblog" namespace="/m" extends="struts-default">
+		<action name="add" class="addMBlogAction">
+			<result name="success">
+				<param name="location">/mbloglist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="view" class="viewMBlogAction">
+			<result name="success">
+				<param name="location">/mbloglist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+	</package>
+	<package name="comment" namespace="/c" extends="struts-default">
+		<action name="add" class="addCommentAction">
+			<result name="success">
+				<param name="location">/commentlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="view" class="viewCommentAction">
+			<result name="success">
+				<param name="location">/commentlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+	</package>
+	<package name="listen" namespace="/l" extends="struts-default">
+		<action name="add" class="addFocusAction">
+			<result name="success">
+				<param name="location">/ok.html</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="no" class="removeFocusAction">
+			<result name="success">
+				<param name="location">/userlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="nofan" class="removeFanAction">
+			<result name="success">
+				<param name="location">/userlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="viewlisten" class="viewListenAction">
+			<result name="success">
+				<param name="location">/userlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="viewfan" class="viewFanAction">
+			<result name="success">
+				<param name="location">/userlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+	</package>
+	<package name="search" namespace="/s" extends="struts-default">
+		<action name="nick" class="findUserByNickAction">
+			<result name="success">
+				<param name="location">/search_userlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+	</package>
+	<package name="tag" namespace="/t" extends="struts-default">
+		<action name="add" class="addTagAction">
+			<result name="success">
+				<param name="location">/taglist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="set" class="changeTagAction">
+			<result name="success">
+				<param name="location">/ok.html</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="no" class="removeTagAction">
+			<result name="success">
+				<param name="location">/taglist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="view" class="viewTagAction">
+			<result name="success">
+				<param name="location">/taglist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+	</package>
+	<package name="impression" namespace="/i" extends="struts-default">
+		<action name="add" class="addImpressionAction">
+			<result name="success">
+				<param name="location">/impressionlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="no" class="removeImpressionAction">
+			<result name="success">
+				<param name="location">/ok.html</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+		<action name="view" class="viewImpressionAction">
+			<result name="success">
+				<param name="location">/impressionlist.jsp</param>
+				<param name="parse">false</param>
+			</result>
+		</action>
+	</package>
+</struts>    

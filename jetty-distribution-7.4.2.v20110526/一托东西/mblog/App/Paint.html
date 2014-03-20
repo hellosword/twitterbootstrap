@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Paint</title>
+<link rel="stylesheet" href="../styles/Paint.css">
+<script src="../scripts/Paint.js"></script>
+</head>
+
+<body>
+<div id="paintContainer">
+  <div class="mainBox">
+    <div class="painter">
+      <div class="img"><img src="../images/avatar/a.jpg" alt="选手照片"/><span>aaa</span>正在作画···</div>
+      <div class="infor" id="keyword">meinb</div>
+      <div class="timer">倒计时：<span id="seconds">80</span>S</div>
+    </div>
+    <div class="CanvasContainer">
+      <canvas id="drawingCanvas" width="613" height="400"></canvas>
+    </div>
+    <div class="players">
+      <table>
+        <tr>
+          <td><span>shabiyige</span><img class='master' src="../images/avatar/a.jpg" alt="选手照片"/></td>
+          <td><span>shabiyige</span><img src="../images/avatar/b.jpg" alt="选手照片"/></td>
+          <td><span>shabiyige</span><img src="../images/avatar/a.jpg" alt="选手照片"/></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="sideBox">
+    <div class="leave">
+      <input name="" type="button" value="退出游戏">
+    </div>
+    <div class="tools">
+      <div class="Toolbar colors">
+        <table>
+          <tr>
+            <td id="black" onclick="changeColor('#000', this)">&nbsp;</td>
+            <td id="grey" onclick="changeColor('#999', this)">&nbsp;</td>
+            <td id="red" onclick="changeColor('#F00', this)">&nbsp;</td>
+            <td id="orange" onclick="changeColor('#F93', this)">&nbsp;</td>
+            <td id="yellow" onclick="changeColor('#FF0', this)">&nbsp;</td>
+            <td id="Color963" onclick="changeColor('#963', this)">&nbsp;</td>
+            <td id="ColorC9F" onclick="changeColor('#C9F', this)">&nbsp;</td>
+          </tr>
+          <tr>
+            <td id="green" onclick="changeColor('#0F0', this)">&nbsp;</td>
+            <td id="blue" onclick="changeColor('#00F', this)">&nbsp;</td>
+            <td id="purple" onclick="changeColor('#0FF', this)">&nbsp;</td>
+          </tr>
+        </table>
+      </div>
+      <div class="Toolbar thickness">
+        <table>
+          <tr>
+            <td id="thin"  onclick="changeThickness(1, this)"><img src="../images/pen_thin.gif" alt="Thin Pen" ></td>
+            <td id="medium"  onclick="changeThickness(5, this)"><img src="../images/pen_medium.gif" alt="Medium Pen"></td>
+            <td id="thick" onclick="changeThickness(10, this)"><img src="../images/pen_thick.gif" alt="Thick Pen" ></td>
+          </tr>
+        </table>
+      </div>
+      <div class="Toolbar operations">
+        <button onclick="clearCanvas()">清除画布</button>
+        <button onclick="clearCanvas()">放弃作画</button>
+      </div>
+    </div>
+    <div class="saying">
+      <div class="sayingTitle">聊天信息：</div>
+      <div class="sayingItems">
+        <div class="sayingItem"><span class="username">aaa</span>:<span class="content">傻逼</span></div>
+        <div class="sayingItem"><span class="username">aaa</span>:<span class="content">傻逼</span></div>
+        <div class="sayingItem"><span class="username">aaa</span>:<span class="content">傻逼</span></div>
+        <div class="sayingItem"><span class="username">aaa</span>:<span class="content">傻逼</span></div>
+        <div class="sayingItem"><span class="username">aaa</span>:<span class="content">傻逼</span></div>
+      </div>
+      <div class="sayingBox" id="sayingBox">
+        <input type="text" id="sayingInput"/>
+        <input type="button" value="发送" id="sayingButton"/>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

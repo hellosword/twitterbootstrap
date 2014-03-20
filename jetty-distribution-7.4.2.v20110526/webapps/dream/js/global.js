@@ -1,0 +1,1 @@
+var $basedomain = "http://localhost:8081/dream/"

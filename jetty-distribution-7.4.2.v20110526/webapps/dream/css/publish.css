@@ -1,0 +1,59 @@
+
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  background-color: #fff;
+}
+
+#pageNv {
+  margin-top:30px;
+}
+
+#form-pub {
+  padding: 15px;
+  margin: 0 auto;
+}
+#form-pub .form-group{
+  margin-bottom: 15px;
+}
+#form-pub .control-label{
+  margin-bottom: 15px;
+}
+
+#form-pub .form-control {
+  position: relative;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+#form-pub .form-control:focus {
+  z-index: 2;
+}
+#form-pub input[type="input"] {
+  margin-bottom: 6px;
+  border-radius: 5px;
+}
+#form-pub input[type="file"] {
+  border-radius: 5px;
+}
+#form-pub button{
+  margin-right: 20px;
+}
+#form-pub textarea {
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+
+#upload_form{
+  display:none;
+} 
+
+input.error { /*border: 1px solid red;*/ }
+label.error {
+  padding-left: 16px;
+  padding-bottom: 2px;
+  padding:3px 12px;
+  font-weight: bold;
+  color: #EA5200;
+}
+/**/

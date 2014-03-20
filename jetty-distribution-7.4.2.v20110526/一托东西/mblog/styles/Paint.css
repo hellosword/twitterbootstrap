@@ -1,0 +1,398 @@
+﻿body {
+	background: white;
+}
+
+#loading {
+	width: 100px;
+	color: #F00;
+	text-align: center;
+	margin: auto;
+}
+
+#paintContainer {
+	height: 100%;
+}
+
+canvas {
+	border: 1px solid #7B899B;
+	background-color: #FFF;
+}
+
+canvas:hover{
+	cursor:pointer;
+}
+
+table td {
+	width: 20px;
+	height: 20px;
+	border: 2px solid #CCC;
+	padding: 0px;
+}
+
+table td:hover {
+	border: 2px solid #C90;
+}
+
+table td.Selected {
+	border: 2px solid #C90;
+}
+
+table td img {
+	width: 20px;
+	height: 20px;
+}
+
+#black {
+	background-color: #000;
+}
+
+#grey {
+	background-color: #999;
+}
+
+#red {
+	background-color: #F00;
+}
+
+#orange {
+	background-color: #F93;
+}
+
+#yellow {
+	background-color: #FF0;
+}
+
+#green {
+	background-color: #0F0;
+}
+
+#blue {
+	background-color: #00F;
+}
+
+#purple {
+	background-color: #0FF;
+}
+
+#Color963 {
+	background-color: #963;
+}
+
+#ColorC9F {
+	background-color: #C9F;
+}
+
+#paintContainer .mainBox {
+	float: left;
+	background-color: #FFF;
+	width: 614px;
+	height: 100%;
+}
+
+#paintContainer .sideBox {
+	float: left;
+	width: 300px;
+	height: 100%;
+	-moz-box-shadow: -1px 0px 5px #333;
+	-webkit-box-shadow: -1px 0px 5px #333;
+	box-shadow: -1px 0px 5px #333;
+	background: url("../images/img/bg.jpg") no-repeat center -5px;
+}
+
+#paintContainer .sideBox .logo {
+	width: 100%;
+	padding-top: 35px;
+}
+
+#paintContainer .sideBox .logo img {
+	margin-left: 14px;
+}
+
+#paintContainer:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.sideBox .tools {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #666;
+	border-top: 1px solid #666;
+	height: 120px;
+	float: none;
+	margin-left: 20px;
+}
+
+.sideBox .saying {
+	position: relative;
+	margin: auto;
+	padding: 10px 20px; width : 240px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.Toolbar input {
+	padding: 0px 10px;
+	height: 20px; border : none;
+	background-image: linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -o-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -moz-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -webkit-linear-gradient(bottom, rgb(255, 242, 201)
+		100%, rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -ms-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgb(255,
+		242, 201) ), color-stop(0, rgb(255, 204, 76) ),
+		color-stop(0.59, rgb(255, 158, 54) ) );
+	border-radius: 15px;
+	text-align: center;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 1px 1px 3px #333;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	box-shadow: 1px 1px 3px #333;
+	border: none;
+}
+
+.sideBox .leave input {
+	float: right;
+}
+
+.saying .sayingTitle {
+	color: #FF0;
+	font-size: 16px;
+	height: 30px;
+}
+
+.saying .sayingItem {
+	color: #FFF;
+	font-size: 12px;
+}
+
+#sayingInput {
+	width: 180px;
+	background: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	color: #FFF;
+}
+
+#sayingButton {
+	width: 48px;
+	margin-left: 5px;
+	border: none; background-image : linear-gradient( bottom, rgb( 255, 242
+	, 201) 100%, rgb( 255, 204, 76) 0%, rgb( 255, 158, 54) 59%);
+	background-image: -o-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -moz-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -webkit-linear-gradient(bottom, rgb(255, 242, 201)
+		100%, rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -ms-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgb(255,
+		242, 201) ), color-stop(0, rgb(255, 204, 76) ),
+		color-stop(0.59, rgb(255, 158, 54) ) );
+	border-radius: 15px;
+	text-align: center;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 1px 1px 3px #333;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	box-shadow: 1px 1px 3px #333;
+	background-image: linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+}
+
+.myOperations {
+	padding-left: 30px;
+}
+
+.myOperations div {
+	width: 100px;
+	display: inline-block;
+	margin: 20px 10px;
+	height: 30px;
+	background-image: linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -o-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -moz-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -webkit-linear-gradient(bottom, rgb(255, 242, 201)
+		100%, rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -ms-linear-gradient(bottom, rgb(255, 242, 201) 100%,
+		rgb(255, 204, 76) 0%, rgb(255, 158, 54) 59% );
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgb(255,
+		242, 201) ), color-stop(0, rgb(255, 204, 76) ),
+		color-stop(0.59, rgb(255, 158, 54) ) );
+	border-radius: 15px;
+	text-align: center;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 1px 1px 3px #333;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	box-shadow: 1px 1px 3px #333;
+	line-height: 30px;
+	color: #234;
+}
+
+.myOperations div:hover {
+	cursor: pointer;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~mainBox~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.rooms .room {
+	width: 300px;
+}
+
+.roomInf .avatar {
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.roomPlayers {
+	margin-left: 16px;
+}
+
+.roomInf .IDAndMaster {
+	float: right;
+	margin-right: 10px;
+}
+
+.roomInf:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.IDAndMaster .roomID {
+	font: italic bold 26px Verdana, Geneva, sans-serif;
+	color: #C6F;
+}
+
+.roomPlayers table td {
+	display: inline-block;
+	height: 40px !important;
+	width: 40px !important;
+	border: none;
+}
+
+.roomPlayers table td img {
+	height: 40px;
+	width: 40px;
+}
+
+.roomPlayers table td:hover {
+	border: none;
+}
+
+.enter {
+	width: 250px;
+	margin: 0px auto;
+	background-color: #939;
+	border-radius: 5px;
+	text-align: center;
+	color: #FFF;
+}
+
+.playing {
+	background-color: #333;
+	color: #F00;
+	width: 250px;
+	margin: 0px auto;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.enter:hover {
+	cursor: pointer;
+}
+
+.playing:hover {
+	cursor: pointer;
+}
+
+.painter {
+	background-color: #CCC;
+	height: 50px;
+	border-right: 1px ridge #FFF;
+}
+
+.painter .img {
+	height: 40px;
+	float: left;
+}
+
+.img img {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	margin: 5px;
+	vertical-align: middle;
+}
+
+.painter .infor {
+	float: left;
+	margin-left: 150px;
+}
+
+.painter .timer {
+	float: right;
+	font: 18px Verdana, Geneva, sans-serif;
+	color: #93F;
+}
+
+.painter:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.painter .timer span {
+	color: #F00;
+	font-size: 24px;
+}
+
+.players {
+	background-color: #CCC;
+	border-right: 1px ridge #FFF;
+}
+
+.players table {
+	margin: 0px;
+	width: 324px;
+}
+
+.players table td img {
+	width: 100px;
+	height: 100px;
+}
+
+.players .master {
+	border: 2px solid #F0F;
+}

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" /><!--
+		
+		<property name="jdbcUrl"> 
+		     <value>jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_tomwork</value> 
+		</property> 
+		<property name="user" value="54woo3z5ox" /> 
+		<property name="password" value="53xxklmzxjwzjh1j11jwylhw5kz5zkwyxzjyk5yl" />  
+
+		
+		
+		--><property name="jdbcUrl">
+			<value>jdbc:mysql://localhost:3306/dream</value>
+		</property>
+		<property name="user" value="root" />
+		<property name="password" value="220412" />
+		
+		<property name="maxPoolSize" value="12" />
+		<property name="minPoolSize" value="0" />
+		<property name="maxStatements" value="200" />
+		<property name="initialPoolSize" value="3" />
+		<property name="maxIdleTime" value="10" />
+		<property name="idleConnectionTestPeriod" value="10" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+
+    
+    
+    
+	<!-- start of action -->
+	
+	<bean id="initAction" class="dream.action.Init" scope="prototype">
+	</bean>
+	
+	<bean id="loginAction" class="dream.action.Login" scope="prototype">
+		<property name="userService" ref="UserService"></property>
+		<property name="messageService" ref="MessageService"></property>
+	</bean>
+	
+	<bean id="logoutAction" class="dream.action.Logout" scope="prototype">
+	</bean>
+
+	<bean id="registerAction" class="dream.action.Register" scope="prototype">
+		<property name="userService" ref="UserService"></property>
+	</bean>
+
+	<bean id="getUserInfAction" class="dream.action.GetUserInf" scope="prototype">
+		<property name="userService" ref="UserService"></property>
+	</bean>
+
+	<bean id="completeInfAction" class="dream.action.CompleteInf"
+		scope="prototype">
+		<property name="userService" ref="UserService"></property>
+	</bean>
+
+	<bean id="pubEventAction" class="dream.action.PubEvent" scope="prototype">
+		<property name="eventService" ref="EventService"></property>
+	</bean>
+
+	<bean id="showEventAction" class="dream.action.ShowEvent" scope="prototype">
+		<property name="eventService" ref="EventService"></property>
+	</bean>
+	
+	<bean id="getOneEventAction" class="dream.action.GetOneEvent" scope="prototype">
+		<property name="eventService" ref="EventService"></property>
+	</bean>
+	
+	<bean id="pubCommentAction" class="dream.action.PubComment" scope="prototype">
+		<property name="commentService" ref="CommentService"></property>
+	</bean>
+	
+	<bean id="getOneCommentAction" class="dream.action.PubComment" scope="prototype">
+		<property name="commentService" ref="CommentService"></property>
+	</bean>
+	
+	<bean id="getMoreCommentsAction" class="dream.action.GetMoreComments" scope="prototype">
+		<property name="commentService" ref="CommentService"></property>
+	</bean>
+	
+	<bean id="getAllMessagesAction" class="dream.action.GetAllMessages" scope="prototype">
+		<property name="messageService" ref="MessageService"></property>
+	</bean>
+	
+	<bean id="getUntreatedMessagesNumAction" class="dream.action.GetUntreatedMessagesNum" scope="prototype">
+		<property name="messageService" ref="MessageService"></property>
+	</bean>
+	
+	<bean id="getOneMessageAction" class="dream.action.GetOneMessage" scope="prototype">
+		<property name="messageService" ref="MessageService"></property>
+	</bean>
+	
+	<bean id="pubApplyAction" class="dream.action.PubApply" scope="prototype">
+		<property name="applyService" ref="ApplyService"></property>
+		<property name="eventService" ref="EventService"></property>
+	</bean>
+	
+	<bean id="applyForAction" class="dream.action.ApplyFor" scope="prototype">
+		<property name="applyService" ref="ApplyService"></property>
+	</bean>
+	
+	<bean id="getAllApplysAction" class="dream.action.GetAllApplys" scope="prototype">
+		<property name="applyService" ref="ApplyService"></property>
+	</bean>
+	
+	<bean id="confirmApplyAction" class="dream.action.ConfirmApply" scope="prototype">
+		<property name="applyService" ref="ApplyService"></property>
+	</bean>
+	
+	<bean id="getAllApplyDetailsAction" class="dream.action.GetAllApplyDetails" scope="prototype">
+		<property name="applyService" ref="ApplyService"></property>
+	</bean>
+	
+	<bean id="getAllApplyUsersAction" class="dream.action.GetAllApplyUsers" scope="prototype">
+		<property name="applyService" ref="ApplyService"></property>
+	</bean>
+	<!-- end of action -->
+
+
+	<!-- start of DAO -->
+
+	<bean id="UserDAO" class="dream.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserToAreaDAO" class="dream.dao.UserToAreaDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ReplyDAO" class="dream.dao.ReplyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EventDAO" class="dream.dao.EventDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AreaDAO" class="dream.dao.AreaDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MessageDAO" class="dream.dao.MessageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EventToAreaDAO" class="dream.dao.EventToAreaDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CommentDAO" class="dream.dao.CommentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ApplyDAO" class="dream.dao.ApplyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ApplyDetailDAO" class="dream.dao.ApplyDetailDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- end of DAO -->
+
+
+	<!-- start of service -->
+	<bean id="UserService" class="dream.service.UserService">
+		<property name="userDAO" ref="UserDAO"></property>
+	</bean>
+	<bean id="EventService" class="dream.service.EventService">
+		<property name="userDAO" ref="UserDAO"></property>
+		<property name="eventDAO" ref="EventDAO"></property>
+		<property name="commentDAO" ref="CommentDAO"></property>
+		<property name="messageDAO" ref="MessageDAO"></property>
+	</bean>
+	<bean id="CommentService" class="dream.service.CommentService">
+		<property name="userDAO" ref="UserDAO"></property>
+		<property name="eventDAO" ref="EventDAO"></property>
+		<property name="commentDAO" ref="CommentDAO"></property>
+		<property name="messageDAO" ref="MessageDAO"></property>
+	</bean>
+	<bean id="ReplyService" class="dream.service.ReplyService">
+		<property name="userDAO" ref="UserDAO"></property>
+		<property name="replyDAO" ref="ReplyDAO"></property>
+		<property name="commentDAO" ref="CommentDAO"></property>
+	</bean>
+	<bean id="MessageService" class="dream.service.MessageService">
+		<property name="userDAO" ref="UserDAO"></property>
+		<property name="messageDAO" ref="MessageDAO"></property>
+	</bean>
+	<bean id="ApplyService" class="dream.service.ApplyService">
+		<property name="userDAO" ref="UserDAO"></property>
+		<property name="eventDAO" ref="EventDAO"></property>
+		<property name="applyDAO" ref="ApplyDAO"></property>
+		<property name="applyDetailDAO" ref="ApplyDetailDAO"></property>
+	</bean>
+
+	<!-- end of service -->
+
+
+		<!-- 配置Hibernate的局部事务管理器，使用HibernateTransactionManager类 -->
+	<!-- 该类实现PlatformTransactionManager接口，是针对Hibernate的特定实现-->
+	<bean id="transactionManager" 
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<!-- 配置HibernateTransactionManager时需要依注入SessionFactory的引用 -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 配置事务增强处理,指定事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 用于配置详细的事务语义 -->
+		<tx:attributes>
+			<!-- 所有以'get'开头的方法是read-only的 --><!--
+			<tx:method name="get*" read-only="true"/>
+			--><!-- 其他方法使用默认的事务设置 -->
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="applyPointcut" expression="bean(ApplyService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="applyPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="commentPointcut" expression="bean(CommentService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="commentPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="eventPointcut" expression="bean(EventService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="eventPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="messagePointcut" expression="bean(MessageService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="messagePointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="userPointcut" expression="bean(UserService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="userPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="replyPointcut" expression="bean(ReplyService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="replyPointcut"/>
+	</aop:config>
+</beans>

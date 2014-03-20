@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="welcome" location="12,12" size="220,221">
+    <action name="login" location="62,80" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mblog-index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="reg" location="62,151" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mblog-index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="mblog" location="525,18" size="212,183">
+    <action name="add" location="60,141" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mbloglist.jsp" />
+      </result>
+    </action>
+    <action name="view" location="62,79" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mbloglist.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="comment" location="11,386" size="219,188">
+    <action name="add" location="61,139" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="commentlist.jsp" />
+      </result>
+    </action>
+    <action name="view" location="60,71" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="commentlist.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="listen" location="11,587" size="217,229">
+    <action name="add" location="61,82" size="150,40" />
+    <action name="no" location="62,133" size="150,40" />
+    <action name="nofan" location="62,185" size="150,40" />
+  </package>
+  <package name="search" location="12,243" size="219,113">
+    <action name="nick" location="61,64" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="userlist.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="tag" location="258,497" size="288,267">
+    <action name="add" location="129,121" size="150,40" />
+    <action name="set" location="131,169" size="150,40" />
+    <action name="no" location="130,221" size="150,40" />
+    <action name="view" location="130,68" size="150,40" />
+  </package>
+  <package name="impression" location="253,733" size="289,202">
+    <action name="add" location="133,98" size="150,40" />
+    <action name="no" location="135,159" size="150,40" />
+    <action name="view" location="136,46" size="150,40" />
+  </package>
+  <webResource name="mblog-index.jsp" path="/mblog-index.jsp" location="326,68" size="150,55" />
+  <webResource name="mbloglist.jsp" path="/mbloglist.jsp" location="550,227" size="150,55" />
+  <webResource name="commentlist.jsp" path="/commentlist.jsp" location="329,425" size="150,55" />
+  <webResource name="userlist.jsp" path="/userlist.jsp" location="333,293" size="150,55" />
+  <webResource name="login.jsp" path="/login.jsp" location="327,167" size="150,55" />
+</Struts2Diagram>
+

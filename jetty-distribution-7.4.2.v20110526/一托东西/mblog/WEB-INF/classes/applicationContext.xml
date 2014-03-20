@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<bean id="dataSource"  class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" /><!--
+        <property name="jdbcUrl">
+            <value>jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_tomwork</value>
+        </property>
+        <property name="user"               value="54woo3z5ox" />
+        <property name="password"           value="53xxklmzxjwzjh1j11jwylhw5kz5zkwyxzjyk5yl" />
+        --><!-- 以下参数是根据SAE情况配置 -->
+        
+        <property name="jdbcUrl">
+            <value>jdbc:mysql://localhost:3306/mblog</value>
+        </property>
+        <property name="user"               value="root" />
+        <property name="password"           value="superman" />
+        
+        <property name="maxPoolSize"        value="20" />
+        <property name="minPoolSize"        value="5" />
+        <property name="maxStatements"      value="200" />
+        <property name="initialPoolSize"    value="5" />
+        <property name="maxIdleTime"        value="15"/>
+        <property name="idleConnectionTestPeriod"   value="5" />
+        <property name="testConnectionOnCheckin"    value="false" />
+        <property name="testConnectionOnCheckout"   value="false" />
+        <property name="preferredTestQuery"         value="SELECT 1 FROM DUAL" />
+    </bean>   
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	
+	<!-- start of action -->
+	
+	<bean id="loginAction" class="mblog.action.LoginAction" scope="prototype">
+	   <property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="logoutAction" class="mblog.action.LogoutAction" scope="prototype">
+	</bean>
+	<bean id="registerAction" class="mblog.action.RegisterAction" scope="prototype">
+	   <property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="findUserByNickAction" class="mblog.action.FindUserByNickAction" scope="prototype">
+	   <property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="addMBlogAction" class="mblog.action.AddMBlogAction" scope="prototype">
+	   <property name="mblogService" ref="mblogService"></property>
+	</bean>
+	<bean id="viewMBlogAction" class="mblog.action.ViewMBlogAction" scope="prototype">
+	   <property name="mblogService" ref="mblogService"></property>
+	</bean>
+	<bean id="addTagAction" class="mblog.action.AddTagAction" scope="prototype">
+	   <property name="tagService" ref="tagService"></property>
+	</bean>
+	<bean id="viewTagAction" class="mblog.action.ViewTagAction" scope="prototype">
+	   <property name="tagService" ref="tagService"></property>
+	</bean>
+	<bean id="removeTagAction" class="mblog.action.RemoveTagAction" scope="prototype">
+	   <property name="tagService" ref="tagService"></property>
+	</bean>
+	<bean id="changeTagAction" class="mblog.action.ChangeTagAction" scope="prototype">
+	   <property name="tagService" ref="tagService"></property>
+	</bean>
+	<bean id="addCommentAction" class="mblog.action.AddCommentAction" scope="prototype">
+	   <property name="commentService" ref="commentService"></property>
+	</bean>
+	<bean id="viewCommentAction" class="mblog.action.ViewCommentAction" scope="prototype">
+	   <property name="commentService" ref="commentService"></property>
+	</bean>
+	<bean id="addFocusAction" class="mblog.action.AddFocusAction" scope="prototype">
+	   <property name="listenService" ref="listenService"></property>
+	</bean>
+	<bean id="removeFocusAction" class="mblog.action.RemoveFocusAction" scope="prototype">
+	   <property name="listenService" ref="listenService"></property>
+	</bean>
+	<bean id="removeFanAction" class="mblog.action.RemoveFanAction" scope="prototype">
+	   <property name="listenService" ref="listenService"></property>
+	</bean>
+	<bean id="viewListenAction" class="mblog.action.ViewListenAction" scope="prototype">
+	   <property name="listenService" ref="listenService"></property>
+	</bean>
+	<bean id="viewFanAction" class="mblog.action.ViewFanAction" scope="prototype">
+	   <property name="listenService" ref="listenService"></property>
+	</bean>
+	<bean id="addImpressionAction" class="mblog.action.AddImpressionAction" scope="prototype">
+	   <property name="impressionService" ref="impressionService"></property>
+	</bean>
+	<bean id="removeImpressionAction" class="mblog.action.RemoveImpressionAction" scope="prototype">
+	   <property name="impressionService" ref="impressionService"></property>
+	</bean>
+	<bean id="viewImpressionAction" class="mblog.action.ViewImpressionAction" scope="prototype">
+	   <property name="impressionService" ref="impressionService"></property>
+	</bean>
+	<bean id="viewRecFriendsAction" class="mblog.action.ViewRecFriendsAction" scope="prototype">
+	   <property name="tagService" ref="tagService"></property>
+	   <property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="viewFriendsMapAction" class="mblog.action.ViewFriendsMapAction" scope="prototype">
+	   <property name="addressService" ref="addressService"></property>
+	</bean>
+	<bean id="signInAction" class="mblog.action.SignInAction" scope="prototype">
+	   <property name="addressService" ref="addressService"></property>
+	</bean>
+	<bean id="viewPersonnalSpaceAction" class="mblog.action.ViewPersonnalSpaceAction" scope="prototype">
+	   <property name="userService" ref="userService"></property>
+	</bean>
+	<!-- end of action  -->
+	
+	<!-- start of service -->
+	
+	<bean id="userService" class="mblog.service.impl.UserServiceImpl">
+	    <property name="userDAO" ref="userDAO"></property>
+	</bean>
+	<bean id="mblogService" class="mblog.service.impl.MblogServiceImpl">
+	    <property name="mblogDAO" ref="mblogDAO"></property>
+	    <property name="userDAO" ref="userDAO"></property>
+	</bean>
+	<bean id="tagService" class="mblog.service.impl.TagServiceImpl">
+	    <property name="tagDAO" ref="tagDAO"></property>
+	    <property name="userDAO" ref="userDAO"></property>
+	    <property name="markDAO" ref="markDAO"></property>
+	</bean>
+	<bean id="commentService" class="mblog.service.impl.CommentServiceImpl">
+	    <property name="mblogDAO" ref="mblogDAO"></property>
+	    <property name="userDAO" ref="userDAO"></property>
+	    <property name="commentDAO" ref="commentDAO"></property>
+	</bean>
+	<bean id="listenService" class="mblog.service.impl.ListenServiceImpl">
+	    <property name="followDAO" ref="followDAO"></property>
+	    <property name="userDAO" ref="userDAO"></property>
+	</bean>
+	<bean id="impressionService" class="mblog.service.impl.ImpressionServiceImpl">
+	    <property name="userDAO" ref="userDAO"></property>
+	    <property name="impressDAO" ref="impressDAO"></property>
+	    <property name="impressionDAO" ref="impressionDAO"></property>
+	</bean>
+	
+	<bean id="searchService" class="mblog.service.impl.SearchServiceImpl">
+	</bean>
+	<bean id="addressService" class="mblog.service.impl.AddressServiceImpl">
+	    <property name="addressDAO" ref="addressDAO"></property>
+	    <property name="userDAO" ref="userDAO"></property>
+	    <property name="followDAO" ref="followDAO"></property>
+	</bean>
+	<!-- end of service  -->
+	
+	
+	<!-- start of dao -->
+	
+	<bean id="userDAO" class="mblog.Dao.UserDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="mblogDAO" class="mblog.Dao.MblogDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="tagDAO" class="mblog.Dao.TagDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="markDAO" class="mblog.Dao.MarkDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="commentDAO" class="mblog.Dao.CommentDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="followDAO" class="mblog.Dao.FollowDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="impressDAO" class="mblog.Dao.ImpressDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="impressionDAO" class="mblog.Dao.ImpressionDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="addressDAO" class="mblog.Dao.AddressDAO">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- end of dao  -->
+	
+	
+	
+	
+		<!-- 配置Hibernate的局部事务管理器，使用HibernateTransactionManager类 -->
+	<!-- 该类实现PlatformTransactionManager接口，是针对Hibernate的特定实现-->
+	<bean id="transactionManager" 
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<!-- 配置HibernateTransactionManager时需要依注入SessionFactory的引用 -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 配置事务增强处理,指定事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 用于配置详细的事务语义 -->
+		<tx:attributes>
+			<!-- 所有以'get'开头的方法是read-only的 -->
+			<tx:method name="get*" read-only="true"/>
+			<!-- 其他方法使用默认的事务设置 -->
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="addressPointcut" expression="bean(addressService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="addressPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="leePointcut" expression="bean(userService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="leePointcut"/>	
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="mblogPointcut" expression="bean(mblogService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="mblogPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="tagPointcut" expression="bean(tagService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="tagPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="commentPointcut" expression="bean(commentService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="commentPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="listenPointcut" expression="bean(listenService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="listenPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="impressionPointcut" expression="bean(impressionService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="impressionPointcut"/>
+	</aop:config>
+	<aop:config>
+		<aop:pointcut id="searchPointcut" expression="bean(searchService)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="searchPointcut"/>
+	</aop:config>
+	
+</beans>

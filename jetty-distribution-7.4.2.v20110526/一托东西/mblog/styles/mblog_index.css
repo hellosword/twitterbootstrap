@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑", "黑体", "宋体";
+}
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+html,body {
+	height: 100%;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+#personnal_space {
+	float: left;
+	width: 400px;
+	height: 100%;
+}
+
+#mblog_list{
+	float: left;
+	width: 850px;
+	height: 100%;
+}
+
+#right_container{
+	position: absolute;
+	right: 0px;
+	width: 50px;
+	height: 100%;
+	background: #FFF;
+	-moz-box-shadow: -1px 0px 5px #333; 
+	-webkit-box-shadow : -1px 0px 5px #333; 
+	box-shadow : -1px 0px 5px #333;
+}

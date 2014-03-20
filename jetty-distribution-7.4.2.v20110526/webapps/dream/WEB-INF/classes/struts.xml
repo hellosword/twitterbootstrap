@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="json" namespace="/json" extends="json-default">
+		
+		<action name="init" class="initAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="login" class="loginAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="logout" class="logoutAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="register" class="registerAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="getUserInf" class="getUserInfAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+				    error_type,user.*,error_message
+				</param>
+				<param name="excludeProperties">
+					user.userToAreas,
+					user.replies,
+					user.messages,
+					user.comments,
+					user.events
+                </param>
+
+			</result>
+		</action>
+		<action name="completeInf" class="completeInfAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="pubEvent" class="pubEventAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="showEvent" class="showEventAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="getOneEvent" class="getOneEventAction">
+			<result name="success" type="json">
+			    <param name="includeProperties">
+			    	error_type,error_message,event.*
+				</param>
+				<param name="excludeProperties">
+                </param>
+			</result>
+		</action>
+		<action name="pubComment" class="pubCommentAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+				    comment_id,error_type,error_message	    
+				</param>
+			</result>
+		</action>
+		<action name="getOneComment" class="getOneCommentAction">
+			<result name="success" type="json">
+				<param name="root">comment</param>
+			</result>
+		</action>
+		<action name="getMoreComments" class="getMoreCommentsAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+			   		comments\[\d+\]\.commentId,comments\[\d+\]\.content,comments\[\d+\]\.postTime,
+			   		comments\[\d+\]\.user\.username,comments\[\d+\]\.user\.gender,comments\[\d+\]\.user\.avatar,
+			   		comments\[\d+\]\.user\.userId,error_type,error_message
+				</param>
+				<param name="excludeProperties">
+                </param>
+			</result>
+		</action>
+		<action name="getAllMessages" class="getAllMessagesAction">
+			<result name="success" type="json">		 
+				<param name="includeProperties">
+					message\[\d+\]\.status,message\[\d+\]\.postTime,message\[\d+\]\.messageId,
+					message\[\d+\]\.comment\.commentId,message\[\d+\]\.comment\.user\.username,
+					message\[\d+\]\.comment\.user\.avatar,
+					message\[\d+\]\.event\.eventId,message\[\d+\]\.event\.title,error_type,error_message
+				</param>
+				<param name="excludeProperties">
+                </param>
+			</result>
+		</action>	
+		<action name="getUntreatedMessagesNum" class="getUntreatedMessagesNumAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="getOneMessage" class="getOneMessageAction">
+			<result name="success" type="json">
+				<param name="root">message</param> 
+				<param name="excludeProperties">
+				    event.comments
+                </param>
+			</result>
+		</action>
+		<action name="pubApply" class="pubApplyAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="applyFor" class="applyForAction">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="getAllApplys" class="getAllApplysAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,applys\[\d+\]\.status,applys\[\d+\]\.applyID,
+					applys\[\d+\]\.code,applys\[\d+\]\.imgPath,
+					applys\[\d+\]\.postTime,applys\[\d+\]\.event\.eventId,applys\[\d+\]\.event\.title
+				</param>
+				<param name="excludeProperties">
+                </param>
+			</result>
+		</action>
+		<action name="confirmApply" class="confirmApplyAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,apply\.name,apply\.postTime
+				</param>
+				<param name="excludeProperties">
+                </param>
+			</result>
+		</action>
+		<action name="getAllApplyDetails" class="getAllApplyDetailsAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,applyDetails\[\d+\]\.adID,applyDetails\[\d+\]\.total,
+					applyDetails\[\d+\]\.applyNum,applyDetails\[\d+\]\.event\.eventId,applyDetails\[\d+\]\.event\.title,
+					applyDetails\[\d+\]\.event\.postTime
+				</param>
+				<param name="excludeProperties">
+                </param>
+			</result>
+		</action>
+		<action name="getAllApplyUsers" class="getAllApplyUsersAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,applys\[\d+\]\.applyID,applys\[\d+\]\.status,applys\[\d+\]\.name,
+					applys\[\d+\]\.telephone,applys\[\d+\]\.email
+				</param>
+				<param name="excludeProperties">
+                </param>
+			</result>
+		</action>
+	</package>
+
+</struts>    
